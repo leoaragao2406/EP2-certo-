@@ -1,3 +1,4 @@
+#Olhar pra mensagem de commit
 import disthaversine
 import estanalista
 import normaliza
