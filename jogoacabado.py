@@ -17,7 +17,7 @@ REVERSE = "\033[;7m"
 i=0
 normalizado = normaliza.normaliza(basepaises.DADOS)
 chances = 20
-tentativas = []
+parada = []
 acab=False
 palp=False
 listadica=[]
@@ -48,7 +48,7 @@ while acab==False:
                 print('Você ja tentou esse país')
             else:
                 dist = disthaversine.haversine(basepaises.EARTH_RADIUS, normalizado[paisescolhido]['geo']['latitude'],normalizado[paisescolhido]['geo']['longitude'], normalizado[chute]['geo']['latitude'], normalizado[chute]['geo']['longitude'])
-                parada=ordenando.adiciona_em_ordem(chute,dist,tentativas)
+                parada=ordenando.adiciona_em_ordem(chute,dist,parada)
                 for i in range(len(parada)):
                     if parada[i][1]<3500:
                         print(RED+"{},{:.3f} km".format(parada[i][0],parada[i][1])+RESET)
